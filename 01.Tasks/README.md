@@ -20,7 +20,7 @@ git commit -m "local README.md"
 
 2. <u>Создайте непустой удалённый репозиторий (например, с файлом README.md) с именем, соответствующим имени этого проекта.</u>
 
-Создам удаленный репозиторий https://githab.com/allseenn/bash.git без вебраузера
+Создам удаленный репозиторий https://github.com/allseenn/bash.git без вебраузера
 ```
 curl -u allseenn https://api.github.com/user/repos -d '{"name":"bash","private":false}'
 ```
