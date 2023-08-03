@@ -89,7 +89,7 @@ curl -X POST \
 -d '{"title":"Add some text to README.md","body":"Make it in dev-branch and pull request me with new issue","assignee":"strogino"}'
 ```
 
-<img src=pics/01.png>
+[<img src=pics/01.png width=480>](pics/01.png)
 
 *Рис1. Результат выполнения api по созданию issue, если посмотреть через браузер*
 
@@ -123,7 +123,7 @@ curl -L -X POST \
  -d '{"title":"New dev branch","body":"Please merge my work to main branch","head":"dev","base":"main"}'
 ```
 
-<img src=pics/02.png>
+[<img src=pics/02.png width=480>](pics/02.png)
 
 ### 3. Проверьте выполнение задачи, примите pull request и удалите ветку, в которой решалась данная задача.
 
@@ -143,9 +143,9 @@ https://api.github.com/repos/allseenn/bash/pulls
 
 В нашем случае это второй запрос: https://api.github.com/repos/allseenn/bash/pulls/2 - этот адрес вставим в следующею команду.
 
-<img src=pics/03.png>
+[<img src=pics/03.png width=480>](pics/03.png)
 
-<img src=pics/04.png>
+[<img src=pics/04.png width=480>](pics/04.png)
 
 **allseenn принимает запрос и сливает ветки:**
 
@@ -177,7 +177,7 @@ https://api.github.com/repos/allseenn/bash/git/refs/heads/dev
 
 Ветка удалена успешно. 
 
-<img src=pics/05.png>
+[<img src=pics/05.png width=480>](pics/05.png)
 
 **Задачу можно закрыть**
 
