@@ -10,7 +10,7 @@
 - allseenn (в роли тимлида)
 - strogino (в роли разраба)
 
-Т.к. в задании не сказано с помощью какого инструмента выполнять работу (веб или консоль), то рискну воспользоваться консольным набором curl + GitHub REST API. Полный [список GitHub API](https://docs.github.com/ru/rest/repos?apiVersion=2022-11-28)
+Т.к. в задании не сказано с помощью какого инструмента выполнять работу (веб или консоль), то рискну воспользоваться консольным набором curl + GitHub REST API. Полный [список GitHub API](https://docs.github.com/ru/rest/repos)
 
 
 **allseenn приглашает strogino в репозиторий bash:**
@@ -89,7 +89,9 @@ curl -X POST \
 -d '{"title":"Add some text to README.md","body":"Make it in dev-branch and pull request me with new issue","assignee":"strogino"}'
 ```
 
-[<img src=pics/01.png width=480>](pics/01.png)
+<a href=https://github.com/allseenn/git/blob/main/03.Tasks/pics/01.png>
+<img src=pics/01.png width=500>
+</a>
 
 *Рис1. Результат выполнения api по созданию issue, если посмотреть через браузер*
 
@@ -123,9 +125,13 @@ curl -L -X POST \
  -d '{"title":"New dev branch","body":"Please merge my work to main branch","head":"dev","base":"main"}'
 ```
 
-[<img src=pics/02.png width=480>](pics/02.png)
+<a href=https://github.com/allseenn/git/blob/main/03.Tasks/pics/02.png>
+<img src=pics/02.png width=500>
+</a>
 
-### 3. Проверьте выполнение задачи, примите pull request и удалите ветку, в которой решалась данная задача.
+*Рис2. Результат выполнения api по созданию pull-request, если посмотреть через браузер*
+
+#### 3. Проверьте выполнение задачи, примите pull request и удалите ветку, в которой решалась данная задача.
 
 Пользователь allseenn также получит письмо о pull request. Но, опять же можно посмотреть с помощью api.
 
@@ -139,13 +145,21 @@ curl -L -X GET \
 https://api.github.com/repos/allseenn/bash/pulls
 ```
 
-Вышеописанный апи вернет список всех открытых запросов, нужно выбрать нужный и подставить его в конец url.
+Вышеописанный api вернет список всех открытых запросов, нужно выбрать нужный и подставить его в конец url.
 
 В нашем случае это второй запрос: https://api.github.com/repos/allseenn/bash/pulls/2 - этот адрес вставим в следующею команду.
 
-[<img src=pics/03.png width=480>](pics/03.png)
+<a href=https://github.com/allseenn/git/blob/main/03.Tasks/pics/03.png>
+<img src=pics/03.png width=500>
+</a>
 
-[<img src=pics/04.png width=480>](pics/04.png)
+*Рис3. Тело pull-requiest, если посмотреть через браузер*
+
+<a href=https://github.com/allseenn/git/blob/main/03.Tasks/pics/04.png>
+<img src=pics/04.png width=500>
+</a>
+
+*Рис4. Различия веток main и dev, если посмотреть через браузер*
 
 **allseenn принимает запрос и сливает ветки:**
 
@@ -177,7 +191,11 @@ https://api.github.com/repos/allseenn/bash/git/refs/heads/dev
 
 Ветка удалена успешно. 
 
-[<img src=pics/05.png width=480>](pics/05.png)
+<a href=https://github.com/allseenn/git/blob/main/03.Tasks/pics/05.png>
+<img src=pics/05.png width=500>
+</a>
+
+*Рис5. Результат вливания ветки dev в main, если посмотреть через браузер*
 
 **Задачу можно закрыть**
 
@@ -188,3 +206,7 @@ curl -X POST \
 https://api.github.com/repos/allseenn/bash/issues/1 \
  -d '{"state":"closed"}'
 ```
+
+В итоге имеем:
+- [Закрытую задачу (issue)](https://github.com/allseenn/bash/issues/1)
+- [Выполненный pull-request](https://github.com/allseenn/bash/pull/2)
