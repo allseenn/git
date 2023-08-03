@@ -7,11 +7,11 @@
 #### 1. Пригласите в свой проект кого-то из коллег по обучению, дайте им доступ к своему репозиторию (кроме ветки master).
 
 Для выполнения данного задания буду использовать два своих github аккаунта:
+
 - allseenn (в роли тимлида)
 - strogino (в роли разраба)
 
 Т.к. в задании не сказано с помощью какого инструмента выполнять работу (веб или консоль), то рискну воспользоваться консольным набором curl + GitHub REST API. Полный [список GitHub API](https://docs.github.com/ru/rest/repos)
-
 
 **allseenn приглашает strogino в репозиторий bash:**
 
@@ -75,6 +75,7 @@ curl -L \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/user/repository_invitations/232323096
 ```
+
 где, 232323096 - номер приглашения
 
 #### 2. Поставьте ему в GitHub задачу по своему проекту, попросите её выполнить в отдельной ветке, а после выполнения — создать pull request и перевести задачу обратно на вас.
@@ -99,6 +100,7 @@ curl -X POST \
 
 Все новые задачи приходят на почту, почтовая служба легко может быть задействована в процессе автоматизации.
 Но, и на этот случай поможет API:
+
 ```
 curl -X GET \
  -H "Accept: application/vnd.github+json" \
@@ -153,7 +155,7 @@ https://api.github.com/repos/allseenn/bash/pulls
 <img src=pics/03.png width=500>
 </a>
 
-*Рис3. Тело pull-requiest, если посмотреть через браузер*
+*Рис3. Тело pull-request, если посмотреть через браузер*
 
 <a href=https://github.com/allseenn/git/blob/main/03.Tasks/pics/04.png>
 <img src=pics/04.png width=500>
@@ -171,7 +173,9 @@ curl -L -X PUT \
  https://api.github.com/repos/allseenn/bash/pulls/2/merge \
  -d '{"commit_title":"Merge pull request #1 from allseenn/dev","commit_message":"New dev branch","merge_method":"merge"}'
 ```
+
 Слияние произошло успешно. Осталось удалить ветку dev. Это можно сделать через консоль:
+
 ```
 git branch -d dev
 git push origin --delete dev
@@ -189,7 +193,7 @@ curl -L -X DELETE \
 https://api.github.com/repos/allseenn/bash/git/refs/heads/dev
 ```
 
-Ветка удалена успешно. 
+Ветка удалена успешно.
 
 <a href=https://github.com/allseenn/git/blob/main/03.Tasks/pics/05.png>
 <img src=pics/05.png width=500>
@@ -208,5 +212,6 @@ https://api.github.com/repos/allseenn/bash/issues/1 \
 ```
 
 В итоге имеем:
+
 - [Закрытую задачу (issue)](https://github.com/allseenn/bash/issues/1)
 - [Выполненный pull-request](https://github.com/allseenn/bash/pull/2)
