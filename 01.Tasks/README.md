@@ -22,7 +22,9 @@ git commit -m "local README.md"
 
 Создам удаленный репозиторий https://github.com/allseenn/bash.git без вебраузера
 ```
-curl -u allseenn https://api.github.com/user/repos -d '{"name":"bash","private":false}'
+curl -u allseenn https://api.github.com/user/repos \
+-H "Authorization: Bearer <PAT>" \
+-d '{"name":"bash","private":false}'
 ```
 Используя утилиту **curl** необходимо указать параметры:
 - **u** - имя пользовтеля
